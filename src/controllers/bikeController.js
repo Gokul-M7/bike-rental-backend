@@ -8,7 +8,7 @@ const addBike=async(req,res)=>
         {
             return res.status(400).json({
                 success:false,
-                message:"All fields are required"
+                message:"All fields are required and must have a valid format"
             });
         }
         console.log("req.user:", req.user);
