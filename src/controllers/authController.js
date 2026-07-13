@@ -66,7 +66,7 @@ const loginUser = async(req,res)=>
         {
             res.status(400).json({
                 success:false,
-                message:"Invalid email or password",
+                message:"Invalid email or invalid password!!!",
             });
         }
         const isMatch=await bcrypt.compare(password,user.password);
@@ -74,7 +74,7 @@ const loginUser = async(req,res)=>
         {
             res.status(400).json({
                 success:false,
-                message:"Invalid email or password",
+                message:"Invalid email or invalid password",
             });
         }
         const token=jwt.sign({id:user._id},process.env.JWT_SECRET,{
